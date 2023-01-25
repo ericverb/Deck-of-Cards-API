@@ -6,15 +6,6 @@ namespace DeckOfCardsApi.Controllers
 {
     public class DeckController : Controller
     {
-        public IActionResult Index()
-        {
-            string apiUri = "https://deckofcardsapi.com/api/deck/new/";
-            var apiTask = apiUri.GetJsonAsync<NewDeckApi>();
-            apiTask.Wait();
-            NewDeckApi deck = apiTask.Result;
-            return View(deck);
-
-        }
 
         public IActionResult DrawFive()
         {
